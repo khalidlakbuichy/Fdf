@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: klakbuic <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: khalid <khalid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 08:02:19 by klakbuic          #+#    #+#             */
-/*   Updated: 2023/11/21 10:02:10 by klakbuic         ###   ########.fr       */
+/*   Updated: 2024/01/02 09:52:25 by khalid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "../inc/get_next_line.h"
 #define TRUE 1
 
 int	ft_lst_clear(t_list **lst)

@@ -6,7 +6,7 @@
 /*   By: khalid <khalid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/01 11:57:30 by khalid            #+#    #+#             */
-/*   Updated: 2024/01/01 17:29:01 by khalid           ###   ########.fr       */
+/*   Updated: 2024/01/02 10:19:10 by khalid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,23 +24,32 @@
 
 # define WIDTH 800
 # define HEIGHT 800
-
+# define TRUE 1
 typedef struct s_data_img
 {
-	void	*img;
-	char	*addr;
-	int		bits_per_pixel;
-	int		line_length;
-	int		endian;
-}			t_data_img;
+	void			*img;
+	char			*addr;
+	int				bits_per_pixel;
+	int				line_length;
+	int				endian;
+}					t_data_img;
 
 typedef struct s_mlx
 {
-	void	*ptr;
-	void	*win;
-}			t_mlx;
+	void			*ptr;
+	void			*win;
+}					t_mlx;
 
-char		*get_next_line(int fd);
-void		parsing_map(int fd);
+typedef struct s_point
+{
+	unsigned int	x;
+	unsigned int	y;
+	unsigned int	z;
+	unsigned int	color;
+}					t_point;
+
+char				*get_next_line(int fd);
+void				parsing_map(int fd);
+long int			ft_atoi_hex(const char *hex);
 
 #endif
