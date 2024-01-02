@@ -1,35 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   png.c                                              :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: khalid <khalid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/27 10:34:16 by khalid            #+#    #+#             */
-/*   Updated: 2023/12/27 10:42:18 by khalid           ###   ########.fr       */
+/*   Created: 2024/01/01 17:09:33 by khalid            #+#    #+#             */
+/*   Updated: 2024/01/01 17:29:11 by khalid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "../inc/fdf.h"
 
-#include "../minilibx_linux/mlx.h"
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-
-int	main(void)
+int	main(int ac, char **av)
 {
-	void *mlx;
-	void *win;
-	void *img;
-	int width, height;
+	int fd;
 
-	mlx = mlx_init();
-	win = mlx_new_window(mlx, 800, 600, "Image Display");
-
-	img = mlx_xpm_file_to_image(mlx, "open.xpm", &width, &height);
-	if (img == NULL)
-
-	mlx_put_image_to_window(mlx, win, img, 0, 0);
-
-	mlx_loop(mlx);
+	if (ac != 2)
+	{
+		// Error message like: please enter a map !!
+		// exit with failure !
+	}
+	else
+	{
+        // check for the file extension
+        fd = open(av[1], O_RDONLY);
+        parsing_map(fd);
+        
+	}
 }
