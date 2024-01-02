@@ -34,5 +34,5 @@ re: fclean all
 push:
 	git add .
 	git status
-	git commit -m "graphics"
+	git commit -m "new updates"
 	git push
