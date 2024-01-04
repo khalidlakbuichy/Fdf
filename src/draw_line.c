@@ -6,7 +6,7 @@
 /*   By: khalid <khalid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/01 11:54:46 by khalid            #+#    #+#             */
-/*   Updated: 2024/01/01 12:08:15 by khalid           ###   ########.fr       */
+/*   Updated: 2024/01/04 08:23:00 by khalid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,15 +17,15 @@ int	create_trgb(int t, int r, int g, int b)
 	return (t << 24 | r << 16 | g << 8 | b);
 }
 
-void	my_mlx_pixel_put(t_data_img *data, int x, int y, int color)
+void	my_mlx_pixel_put(t_img *data, int x, int y, int color)
 {
 	char	*dst;
 
-	dst = data->addr + (y * data->line_length + x * (data->bits_per_pixel / 8));
+	dst = data->addr + (y * data->line_length + x * (data->bpp / 8));
 	*(unsigned int *)dst = color;
 }
 
-void	drawLine(t_data_img *img, int x0, int y0, int x1, int y1)
+void	drawLine(t_img *img, int x0, int y0, int x1, int y1)
 {
 	int dx = abs(x1 - x0);
 	int dy = abs(y1 - y0);
